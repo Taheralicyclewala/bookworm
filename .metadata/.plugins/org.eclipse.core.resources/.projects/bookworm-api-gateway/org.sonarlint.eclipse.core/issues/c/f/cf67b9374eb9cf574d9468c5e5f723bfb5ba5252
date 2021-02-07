@@ -1,0 +1,13 @@
+
+T
+java:S1165""Make this "fieldName" field final.(–©ÙK8ð•›Ìó.HõRMINORZ
+CODE_SMELL
+V
+java:S1165"#Make this "fieldValue" field final.(ä›¨Ã8ð•›Ìó.HöRMINORZ
+CODE_SMELL
+b
+java:S1948",Make "fieldValue" transient or serializable.(ä›¨Ã8ð•›Ìó.HóRCRITICALZ
+CODE_SMELL
+X
+java:S1165"%Make this "resourceName" field final.(Ä¶î¿8ð•›Ìó.HôRMINORZ
+CODE_SMELL

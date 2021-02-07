@@ -1,0 +1,7 @@
+
+½
+java:S1130"„Remove the declaration of thrown exception 'com.bookworm.bookrating.exception.EntityNotFoundException' which is a runtime exception.(šùþÈþÿÿÿÿ8£¦…êî.HóRMINORZ
+CODE_SMELL
+·
+java:S1130"Remove the declaration of thrown exception 'com.bookworm.bookrating.exception.InvalidIdException' which is a runtime exception.(šùþÈþÿÿÿÿ8£¦…êî.HôRMINORZ
+CODE_SMELL

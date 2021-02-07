@@ -1,0 +1,5 @@
+package com.bookworm.bookwormapigateway.config;
+
+public class WebMvcConfig {
+
+}

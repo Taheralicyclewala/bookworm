@@ -1,0 +1,21 @@
+
+b
+java:S3740J"/Provide the parametrized type for this generic.(¦ψικ8Ε†ωσ.HέRMAJORZ
+CODE_SMELL
+h
+java:S3655T"7Call "Optional#isPresent()" before accessing the value.(ÿ·ψÿÿÿÿ8Ε†ωσ.HήRMAJORZBUG
+]
+java:S5411D"*Use the primitive boolean expression here.(‡Φ…²8Ε†ωσ.HίRMINORZ
+CODE_SMELL
+\
+java:S1452C"&Remove usage of generic wildcard type.(²ηΩ8Ε†ωσ.HΰRCRITICALZ
+CODE_SMELL
+\
+java:S14523"&Remove usage of generic wildcard type.(—­θ€8Ε†ωσ.HαRCRITICALZ
+CODE_SMELL
+a
+java:S3740E"/Provide the parametrized type for this generic.(θΤ£^8Ε†ωσ.HβRMAJORZ
+CODE_SMELL
+]
+java:S5411I"*Use the primitive boolean expression here.(‰Σ8Ε†ωσ.HγRMINORZ
+CODE_SMELL

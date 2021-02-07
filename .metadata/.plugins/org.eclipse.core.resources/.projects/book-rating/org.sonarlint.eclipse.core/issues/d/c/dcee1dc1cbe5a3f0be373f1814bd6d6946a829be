@@ -1,0 +1,10 @@
+
+Έ
+java:S1130"„Remove the declaration of thrown exception 'com.bookworm.bookrating.exception.EntityNotFoundException' which is a runtime exception.(έο±8τη¶νξ.HαRMINORZ
+CODE_SMELL
+d
+java:S1612,",Replace this lambda with a method reference.(¬‰υώÿÿÿÿ8Ηξςξ.HβRMINORZ
+CODE_SMELL
+²
+java:S1130"Remove the declaration of thrown exception 'com.bookworm.bookrating.exception.InvalidIdException' which is a runtime exception.(έο±8τη¶νξ.HγRMINORZ
+CODE_SMELL

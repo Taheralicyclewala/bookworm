@@ -1,0 +1,17 @@
+
+}
+java:S3973I"GUse indentation to denote the code conditionally executed by this "if".(ò°êß8¹Àâûì.HÆ
+RCRITICALZ
+CODE_SMELL
+}
+java:S3973N"GUse indentation to denote the code conditionally executed by this "if".(¼öº£8¹Àâûì.HÅ
+RCRITICALZ
+CODE_SMELL
+e
+java:S1948"*Make "category" transient or serializable.(şÖİÑüÿÿÿÿ8¨¿îûì.HÇ
+RCRITICALZ
+CODE_SMELL
+\
+java:S1948"&Make "book" transient or serializable.(°¢éÅ8¨¿îûì.HÈ
+RCRITICALZ
+CODE_SMELL

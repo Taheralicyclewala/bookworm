@@ -1,0 +1,5 @@
+package com.bookworm.bookwormapigateway.exception;
+
+public class OAuth2AuthenticationProcessingException {
+
+}

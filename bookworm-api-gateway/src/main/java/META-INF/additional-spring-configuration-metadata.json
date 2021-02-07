@@ -1,0 +1,37 @@
+{"properties": [
+  {
+    "name": "book-rating-service",
+    "type": "java.lang.String",
+    "description": "A description for 'book-rating-service'"
+  },
+  {
+    "name": "book-info-url",
+    "type": "java.lang.String",
+    "description": "A description for 'book-info-url'"
+  },
+  {
+    "name": "book-review-service",
+    "type": "java.lang.String",
+    "description": "A description for 'book-review-service'"
+  },
+  {
+    "name": "book-rating-url",
+    "type": "java.lang.String",
+    "description": "A description for 'book-rating-url'"
+  },
+  {
+    "name": "book-review-url",
+    "type": "java.lang.String",
+    "description": "A description for 'book-review-url'"
+  },
+  {
+    "name": "server.datasource",
+    "type": "java.lang.String",
+    "description": "A description for 'server.datasource'"
+  },
+  {
+    "name": "app",
+    "type": "java.lang.String",
+    "description": "A description for 'app'"
+  }
+]}

@@ -1,0 +1,13 @@
+
+ƒ
+java:S3973·"GUse indentation to denote the code conditionally executed by this "if".(œƒŞıÿÿÿÿ8ã¹÷”í.HØRCRITICALZ
+CODE_SMELL
+š
+java:S26374"i"bookRating" is marked "javax.validation.constraints.NotNull" but is not initialized in this constructor.(ÙÔ®ûÿÿÿÿ8Èã¾“ï.HÙRMINORZBUG
+‘
+java:S2293H"YReplace the type specification in this constructor call with the diamond operator ("<>").(±äôÿÿÿÿÿ8„½áøí.HÚRMINORZ
+CODE_SMELL
+š
+java:S2637<"i"bookRating" is marked "javax.validation.constraints.NotNull" but is not initialized in this constructor.(„‡ò•úÿÿÿÿ8“ãœï.HÛRMINORZBUG
+x	java:S107<"AConstructor has 9 parameters, which is greater than 7 authorized.(„‡ò•úÿÿÿÿ8ë°Áüì.HÜRMAJORZ
+CODE_SMELL

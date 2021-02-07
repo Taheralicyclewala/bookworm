@@ -1,0 +1,13 @@
+
+]
+java:S1068%"*Remove this unused "logger" private field.(çİ¯8È§Æô.HÒRMAJORZ
+CODE_SMELL
+h
+java:S1191"5Use classes from the Java API instead of Sun classes.(¢¤ÿ…8È§Æô.HĞRMAJORZ
+CODE_SMELL
+x
+java:S1124%"EReorder the modifiers to comply with the Java Language Specification.(çİ¯8È§Æô.HÑRMINORZ
+CODE_SMELL
+^
+java:S1612H",Replace this lambda with a method reference.(¸üõS8ñ™Ù›ğ.H®RMINORZ
+CODE_SMELL

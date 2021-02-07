@@ -1,0 +1,5 @@
+package com.bookworm.bookwormapigateway.security;
+
+public class UserPrincipal {
+
+}

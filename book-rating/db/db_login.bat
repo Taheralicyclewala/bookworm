@@ -1,0 +1,1 @@
+mysql -uratingbookuser -pbook@123

@@ -1,0 +1,98 @@
+spring:
+  application:
+    name: bookworm-api-gateway-service
+    
+    
+  datasource:
+#    password: ${DATABASE_PASSWORD:book@123}
+#    username: ${DATABASE_USERNAME:bookuser}
+    password: book@123
+    username: bookgatewayuser
+    url: jdbc:mysql://localhost:3306/bookdb_user?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+    initialization-mode: always # Initialize the datasource with available DDL and DML scripts
+    
+    
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update       # Hibernate ddl auto (create, create-drop, validate, update)
+      
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect # The SQL dialect makes Hibernate generate better SQL for the chosen database
+    
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 5014057553-8gm9um6vnli3cle5rgigcdjpdrid14m9.apps.googleusercontent.com
+            clientSecret: tWZKVLxaD_ARWsriiiUFYoIk
+            redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
+            scope:
+              - email
+              - profile
+          facebook:
+            clientId: 121189305185277
+            clientSecret: 42ffe5aa7379e8326387e0fe16f34132
+            redirectUri: "{baseUrl}/oauth2/callback/{registrationId}" # Note that facebook now mandates the use of https redirect URIs, so make sure your app supports https in production
+            scope:
+              - email
+              - public_profile
+        provider:
+          facebook:
+            authorizationUri: https://www.facebook.com/v3.0/dialog/oauth
+            tokenUri: https://graph.facebook.com/v3.0/oauth/access_token
+            userInfoUri: https://graph.facebook.com/v3.0/me?fields=id,first_name,middle_name,last_name,name,email,verified,is_verified,picture.width(250).height(250)
+
+
+myapp:
+  auth:
+    tokenSecret: 926D96C90030DD58429D2751AC1BDBBC
+    tokenExpirationMsec: 864000000
+  oauth2:
+    # After successfully authenticating with the OAuth2 Provider,
+    # we'll be generating an auth token for the user and sending the token to the
+    # redirectUri mentioned by the frontend client in the /oauth2/authorize request.
+    # We're not using cookies because they won't work well in mobile clients.
+    authorizedRedirectUris:
+      - http://localhost:3000/oauth2/redirect
+  
+
+book-info-url: http://book-info-service:8082
+book-rating-url: http://book-rating-service:8083
+book-review-url: http://book-review-service:8084
+
+server:
+  port: 8085
+  
+logging: 
+  level:
+    com:
+      bookworm:
+        bookwormapigateway:
+          clients:
+            BookInfoClient: DEBUG
+            BookRatingClient: DEBUG
+            BookReviewClient: DEBUG
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 160000000
+        readTimeout: 160000000  
+  
+management:
+  endpoint:
+    restart:
+      enabled: true
+    health:
+      enabled: true
+    info:
+      enabled: true
+      
+ribbon:
+  http:
+    client:
+      enabled: true

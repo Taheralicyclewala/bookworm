@@ -1,0 +1,37 @@
+
+µ
+java:S1130,"}Remove the declaration of thrown exception 'com.bookworm.bookinfo.exception.InvalidIdException' which is a runtime exception.(úˆß¦ÿÿÿÿÿ8ÅÛ±›ï.HïRMINORZ
+CODE_SMELL
+»
+java:S1130,"‚Remove the declaration of thrown exception 'com.bookworm.bookinfo.exception.EntityNotFoundException' which is a runtime exception.(úˆß¦ÿÿÿÿÿ8ÅÛ±›ï.HõRMINORZ
+CODE_SMELL
+q
+java:S1117>">Rename "categories" which hides the field declared at line 33.(—¢ý°8‘Áëªï.HöRMAJORZ
+CODE_SMELL
+n	java:S125€"<This block of commented-out lines of code should be removed.(Šç±{8§‘–ðî.HñRMAJORZ
+CODE_SMELL
+»
+java:S1130N"‚Remove the declaration of thrown exception 'com.bookworm.bookinfo.exception.EntityNotFoundException' which is a runtime exception.(É±ñùýÿÿÿÿ8øåºî.HíRMINORZ
+CODE_SMELL
+†
+java:S1602i"SRemove useless curly braces around statement and then remove useless return keyword(Çš»¨8ÅÛ±›ï.HìRMINORZ
+CODE_SMELL
+
+java:S1130]"eRemove the declaration of thrown exception 'java.lang.RuntimeException' which is a runtime exception.(¡Œ®ôûÿÿÿÿ8 ðÝ›ï.HðRMINORZ
+CODE_SMELL
+Ò
+java:S1130]"™Remove the declaration of thrown exception 'com.bookworm.bookinfo.exception.EntityNotFoundException' which is a subclass of 'java.lang.RuntimeException'.(¡Œ®ôûÿÿÿÿ8ÅÛ±›ï.HîRMINORZ
+CODE_SMELL
+ 
+java:S2178."fCorrect this "|" to "||" and extract the right operand to a variable if it should always be evaluated.(”èÅ”ÿÿÿÿÿ8ÅÛ±›ï.HôRBLOCKERZ
+CODE_SMELL
+}	java:S112p"FDefine and throw a dedicated exception instead of using a generic one.(ŠÆêÁùÿÿÿÿ8 ðÝ›ï.HóRMAJORZ
+CODE_SMELL
+s	java:S125Q"<This block of commented-out lines of code should be removed.(„ˆ”áûÿÿÿÿ8£±ÿ‘ð.HêRMAJORZ
+CODE_SMELL
+}	java:S112v"FDefine and throw a dedicated exception instead of using a generic one.(î© »úÿÿÿÿ8ëËÜ›ï.HòRMAJORZ
+CODE_SMELL
+}	java:S112]"FDefine and throw a dedicated exception instead of using a generic one.(¡Œ®ôûÿÿÿÿ8šŠâœï.H÷RMAJORZ
+CODE_SMELL
+s	java:S125_"<This block of commented-out lines of code should be removed.(„¤ˆ©øÿÿÿÿ8‘Áëªï.HëRMAJORZ
+CODE_SMELL

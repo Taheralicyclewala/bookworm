@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "book",
+    "type": "java.lang.String",
+    "description": "A description for 'book'"
+  },
+  {
+    "name": "book-rating-url",
+    "type": "java.lang.String",
+    "description": "A description for 'book-rating-url'"
+  }
+]}

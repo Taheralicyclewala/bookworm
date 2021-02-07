@@ -1,0 +1,9 @@
+
+‘
+java:S22936"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÜÑü„ıÿÿÿÿ8œÚ¤ô.HÛRMINORZ
+CODE_SMELL
+h
+java:S1191"5Use classes from the Java API instead of Sun classes.(¢¤ÿ…8‘üØÃõ.H†RMAJORZ
+CODE_SMELL
+s	java:S125"<This block of commented-out lines of code should be removed.(Šƒìíşÿÿÿÿ8îÃõ.HŒRMAJORZ
+CODE_SMELL

@@ -1,0 +1,16 @@
+
+
+java:S3776#"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(ÜÑãH×RCRITICALZ
+CODE_SMELL
+{
+java:S39738"GUse indentation to denote the code conditionally executed by this "if".(­şıÿÿÿÿHÔRCRITICALZ
+CODE_SMELL
+{
+java:S39733"GUse indentation to denote the code conditionally executed by this "if".(šøîğÿÿÿÿÿHÓRCRITICALZ
+CODE_SMELL
+{
+java:S3973="GUse indentation to denote the code conditionally executed by this "if".(ø¥Ş·ùÿÿÿÿHÕRCRITICALZ
+CODE_SMELL
+v
+java:S3973."GUse indentation to denote the code conditionally executed by this "if".(ÖµÅıHÒRCRITICALZ
+CODE_SMELL

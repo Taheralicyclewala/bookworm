@@ -1,0 +1,13 @@
+
+
+java:S3305"TInject this field value directly into "getCategories", the only method that uses it.(ÃØÀÒşÿÿÿÿ8¹µšªï.HøRCRITICALZ
+CODE_SMELL
+‡
+java:S3305"QInject this field value directly into "getAuthors", the only method that uses it.(ŞÓÖï8‘éó‘ğ.HùRCRITICALZ
+CODE_SMELL
+¥
+java:S1319"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(À‘Õşüÿÿÿÿ8¹µšªï.HúRMINORZ
+CODE_SMELL
+¥
+java:S1319 "mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(›¦ÂŒùÿÿÿÿ8‘éó‘ğ.HûRMINORZ
+CODE_SMELL

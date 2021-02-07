@@ -1,0 +1,62 @@
+server:
+  port: 8082
+
+book-rating-url: http://book-rating-service:8083
+
+logging: 
+  level:
+    com:
+      bookworm:
+        bookinfo:
+          client: 
+            BookRatingClient: DEBUG
+
+spring:
+  datasource:
+#    password: ${DATABASE_PASSWORD:book@123}
+#    username: ${DATABASE_USERNAME:bookuser}
+    password: ${DATABASE_PASSWORD:book@123}
+    username: ${BOOK_INFO_DATABASE_USERNAME:bookinfouser}
+    url: jdbc:mysql://book-info-database:3306/bookdb?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+    initialization-mode: always # Initialize the datasource with available DDL and DML scripts
+    
+    
+  application:
+    name: book-info-service    
+         
+  
+  jpa:
+    hibernate:
+      ddl-auto: update       # Hibernate ddl auto (create, create-drop, validate, update)
+      
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect # The SQL dialect makes Hibernate generate better SQL for the chosen database
+        
+        
+        
+#  cloud:
+#    kubernetes:
+#      reload:
+#        enabled: true
+#        
+#      secrets:
+#        name: db-secret   # name of the secret containing the encoded database Username & password
+        
+        
+management:
+  endpoint:
+    restart:
+      enabled: true
+    health:
+      enabled: true
+    info:
+      enabled: true
+
+
+ribbon:
+  http:
+    client:
+      enabled: true
+        
+ 

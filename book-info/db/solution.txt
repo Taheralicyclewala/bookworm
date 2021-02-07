@@ -1,0 +1,42 @@
+1. 
+
+created my own mysqld.cnf file:
+
+[mysqld]
+pid-file	            = /var/run/mysqld/mysqld.pid
+socket		            = /var/run/mysqld/mysqld.sock
+# Where the database files are stored inside the container
+datadir		            = /var/lib/mysql
+
+# My application special configuration
+max_allowed_packet          = 32M
+sql-mode                    = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION'
+
+# Accept connections from any IP address
+bind-address	            = 0.0.0.0
+---
+created a custom mysql docker image.
+---
+FROM mysql:5.6
+
+# Setup the custom configuration
+ADD mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
+
+2. 
+
+After running the mysql-deployment
+
+->Tried to move into mysq container using command.
+kubectl exec -it <pod-name> bash
+
+--> after moving into mysql container run this command to check the bind address
+mysqld --verbose --help | grep bind-address
+
+--> Try to login into the mysql with the root user & password or your user & password.
+mysql -u <username> -p
+
+3. 
+
+Setting up the (MYSQL_ROOT_HOST : '%') env file in  mysql-deployment.
+
+

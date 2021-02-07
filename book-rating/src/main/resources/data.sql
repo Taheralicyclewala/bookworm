@@ -1,0 +1,1 @@
+insert IGNORE into book_rating(book_id,ratings,avg_rating) values('91906814',1842,4.192);

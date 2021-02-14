@@ -21,7 +21,7 @@ public class BookRatingService {
 					@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "2000"), // sets the timeout
 					@HystrixProperty(name = "circuitBreaker.requestVolumeThreshold",value = "10"), // set the minimum number of threads in rolling window to be tracked
 					@HystrixProperty(name = "circuitBreaker.errorThresholdPercentage",value = "5"), // Set the error percentage at or above which the circuit trips 
-					@HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds",value = "3000")	// set the amount of time after circuit trip, the circuit will un-trip.									
+					@HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds",value = "5000")	// set the amount of time after circuit trip, the circuit will un-trip.									
 			})
 	public UserRating addRating(UserRating userRating) {
 		return bookRatingClient.addUserRating(userRating);
@@ -37,7 +37,7 @@ public class BookRatingService {
 					@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "2000"), // sets the timeout
 					@HystrixProperty(name = "circuitBreaker.requestVolumeThreshold",value = "10"), // set the minimum number of threads in rolling window to be tracked
 					@HystrixProperty(name = "circuitBreaker.errorThresholdPercentage",value = "5"), // Set the error percentage at or above which the circuit trips 
-					@HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds",value = "3000")	// set the amount of time after circuit trip, the circuit will un-trip.									
+					@HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds",value = "5000")	// set the amount of time after circuit trip, the circuit will un-trip.									
 			})
 	public UserRatings getBookRatings(String bookId)
 	{
@@ -54,7 +54,7 @@ public class BookRatingService {
 					@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "2000"), // sets the timeout
 					@HystrixProperty(name = "circuitBreaker.requestVolumeThreshold",value = "10"), // set the minimum number of threads in rolling window to be tracked
 					@HystrixProperty(name = "circuitBreaker.errorThresholdPercentage",value = "5"), // Set the error percentage at or above which the circuit trips 
-					@HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds",value = "3000")	// set the amount of time after circuit trip, the circuit will un-trip.									
+					@HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds",value = "5000")	// set the amount of time after circuit trip, the circuit will un-trip.									
 			})
 	public UserRatings getUserRatings(String userId) {
 		return bookRatingClient.getUserRatings(userId);
@@ -64,5 +64,4 @@ public class BookRatingService {
 	{
 		return new UserRatings();
 	}
-
 }

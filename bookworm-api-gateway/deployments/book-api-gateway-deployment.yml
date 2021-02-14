@@ -1,0 +1,46 @@
+apiVersion: apps/v1           # API version
+kind: Deployment              # Type of kubernetes resource
+metadata:
+  name: book-api-gateway-service    # Name of the kubernetes resource
+  labels:                     # Labels that will be applied to this resource
+    app: book-api-gateway-service
+spec:
+  replicas: 1                 # No. of replicas/pods to run in this deployment
+  selector:
+    matchLabels:              # The deployment applies to any pods mayching the specified labels
+      app: book-api-gateway-service
+  template:                   # Template for creating the pods in this deployment
+    metadata:
+      labels:                 # Labels that will be applied to each Pod in this deployment
+        app: book-api-gateway-service
+    spec:                     # Spec for the containers that will be run in the Pods
+      containers:
+      - name: book-api-gateway-service
+        image: book-api-gateway:latest 
+        imagePullPolicy: Never
+        ports:
+          - name: http
+            containerPort: 8085 # The port that the container exposes
+#        resources:
+#          limits:
+#            cpu: 0.3
+#            memory: "200Mi"
+#        env:                  						# Environment variables supplied to the Pod
+#        - name: BOOK_INFO_DATABASE_USERNAME 				# Name of the environment variable
+#          value: bookinfouser
+#          valueFrom:          						# Get the value of environment variable from kubernetes secrets
+#            secretKeyRef:
+#              name: bookworm-app-secret
+#              key: BOOK_INFO_DATABASE_USERNAME
+#        - name: DATABASE_PASSWORD
+#          value: book@123
+#          valueFrom:
+#            secretKeyRef:
+#              name: bookworm-app-secret
+#              key: DATABASE_PASSWORD
+#        - name: BOOK_INFO_DATABASE_NAME
+#          value: bookinfodb
+#          valueFrom:
+#            secretKeyRef:
+#              name: bookworm-app-secret
+#              key: BOOK_INFO_DATABASE_NAME

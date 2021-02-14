@@ -13,6 +13,7 @@ spring:
     
     
   jpa:
+    show-sql: true
     hibernate:
       ddl-auto: update       # Hibernate ddl auto (create, create-drop, validate, update)
       
@@ -20,8 +21,6 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect # The SQL dialect makes Hibernate generate better SQL for the chosen database
     
-
-
 book-info-url: http://book-info-service:8082
 book-rating-url: http://book-rating-service:8083
 book-review-url: http://book-review-service:8084
@@ -59,3 +58,8 @@ ribbon:
   http:
     client:
       enabled: true
+      
+      
+## App Properties
+jwtSecret: JWTSuperSecretKey
+jwtExpirationInMs: 604800000

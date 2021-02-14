@@ -18,5 +18,5 @@ public interface BookCategoryMappingRepository extends JpaRepository<BookCategor
 	public Optional<List<BookCategoryMapping>> findBooksByCategory(@Param("categoryId") int categoryId);
 	
 	@Query(value ="select * from book_category_mapping bcm where bcm.book_id =:bookId",nativeQuery = true)
-	public Optional<List<BookCategoryMapping>> findCategoriesByBook(@Param("bookId") String bookId);
+	public Optional<List<BookCategoryMapping>> findCategoriesByBook(@Param("bookId") int bookId);
 }

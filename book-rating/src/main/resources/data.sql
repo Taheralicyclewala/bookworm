@@ -1,1 +1,10 @@
-insert IGNORE into book_rating(book_id,ratings,avg_rating) values('91906814',1842,4.192);
+insert IGNORE into book_rating(book_id,ratings,avg_rating) values('1',1842,4.192);
+insert IGNORE into book_rating(book_id,ratings,avg_rating) values('2',6333,4.420);
+insert IGNORE into book_rating(book_id,ratings,avg_rating) values('3',920,3.86);
+insert IGNORE into book_rating(book_id,ratings,avg_rating) values('4',65,3.890);
+insert IGNORE into book_rating(book_id,ratings,avg_rating) values('5',76451,4.26);
+insert IGNORE into book_rating(book_id,ratings,avg_rating) values('6',236,3.71);
+insert IGNORE into book_rating(book_id,ratings,avg_rating) values('7',1235,4.01);
+insert IGNORE into book_rating(book_id,ratings,avg_rating) values('8',1682,4.07);
+insert IGNORE into book_rating(book_id,ratings,avg_rating) values('9',239652,4.17);
+insert IGNORE into book_rating(book_id,ratings,avg_rating) values('10',989,4.09);

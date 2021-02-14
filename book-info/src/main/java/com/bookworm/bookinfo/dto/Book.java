@@ -17,6 +17,9 @@ public class Book implements  Serializable
 	
 	@NotBlank
 	private String id;
+	
+	@NotBlank
+	private String isbn;
 
 	@NotBlank	
 	private String author;
@@ -54,13 +57,14 @@ public class Book implements  Serializable
 
 	public Book(com.bookworm.bookinfo.model.Book modelBook)
 	{
-		this(modelBook.getIsbn(), modelBook.getAuthor().getName(), modelBook.getTitle(), modelBook.getTitle(), modelBook.getSynopsis(), modelBook.getPublisher(), modelBook.getPublicationDate(), modelBook.getPrintLength(), modelBook.getCountryOfOrigin().getName());
+		this(String.valueOf(modelBook.getId()),modelBook.getIsbn(), modelBook.getAuthor().getName(), modelBook.getTitle(), modelBook.getTitle(), modelBook.getSynopsis(), modelBook.getPublisher(), modelBook.getPublicationDate(), modelBook.getPrintLength(), modelBook.getCountryOfOrigin().getName());
 	}
 	
-	public Book(String id, String author, String title, String language, String synopsis,
+	public Book(String id, String isbn, String author, String title, String language, String synopsis,
 			String publisher, Date publicationDate, int printLength, String countryOfOrigin) {
 		super();
 		this.id = id;
+		this.isbn = isbn;
 		this.author = author;
 		this.title = title;
 		this.language = language;
@@ -142,6 +146,14 @@ public class Book implements  Serializable
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
 	}
 
 	public List<String> getCategories() {

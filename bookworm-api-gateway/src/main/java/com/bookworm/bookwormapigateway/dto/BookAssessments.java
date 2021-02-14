@@ -1,5 +1,6 @@
 package com.bookworm.bookwormapigateway.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BookAssessments {
@@ -9,8 +10,8 @@ public class BookAssessments {
 	private List<BookAssessment> assessments;
 
 	
-	
 	public BookAssessments() {
+		this.assessments = new ArrayList<BookAssessment>();
 	}
 
 	public BookAssessments(String bookId, List<BookAssessment> assessments) {
@@ -33,7 +34,12 @@ public class BookAssessments {
 	public void setAssessments(List<BookAssessment> assessments) {
 		this.assessments = assessments;
 	}
-
+	
+	public void addAssessment(BookAssessment bookAssessment)
+	{
+		this.assessments.add(bookAssessment);
+	}
+	
 	@Override
 	public String toString() {
 		return "BookAssessments [bookId=" + bookId + ", assessments=" + assessments + "]";

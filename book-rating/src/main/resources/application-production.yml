@@ -1,0 +1,54 @@
+server:
+  port: 8083
+
+
+
+spring:
+  datasource:
+#    password: ${DATABASE_PASSWORD:book@123}
+#    username: ${DATABASE_USERNAME:bookuser}
+    password: book@123
+    username: bookratinguser
+    url: jdbc:mysql://book-rating-database:3306/bookdb_rating?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+    initialization-mode: always # Initialize the datasource with available DDL and DML scripts
+    
+    
+  application:
+    name: book-rating-service
+         
+  
+  jpa:
+    hibernate:
+      ddl-auto: update       # Hibernate ddl auto (create, create-drop, validate, update)
+      
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect # The SQL dialect makes Hibernate generate better SQL for the chosen database
+        
+        
+        
+#  cloud:
+#    kubernetes:
+#      reload:
+#        enabled: true
+#        
+#      secrets:
+#        name: db-secret   # name of the secret containing the encoded database Username & password
+        
+        
+management:
+  endpoint:
+    restart:
+      enabled: true
+    health:
+      enabled: true
+    info:
+      enabled: true
+
+
+ribbon:
+  http:
+    client:
+      enabled: true
+        
+ 

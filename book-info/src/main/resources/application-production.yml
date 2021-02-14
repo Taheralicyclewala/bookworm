@@ -1,7 +1,7 @@
 server:
   port: 8082
 
-book-rating-url: http://book-rating-service:8083
+book-rating-url: http://book-rating-service:8083/book-rating
 
 logging: 
   level:

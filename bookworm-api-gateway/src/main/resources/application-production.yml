@@ -1,0 +1,65 @@
+spring:
+  application:
+    name: bookworm-api-gateway-service
+    
+    
+  datasource:
+#    password: ${DATABASE_PASSWORD:book@123}
+#    username: ${DATABASE_USERNAME:bookuser}
+    password: book@123
+    username: bookgatewayuser
+    url: jdbc:mysql://book-gateway-database:3306/bookdb_user?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+    initialization-mode: always # Initialize the datasource with available DDL and DML scripts
+    
+    
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update       # Hibernate ddl auto (create, create-drop, validate, update)
+      
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect # The SQL dialect makes Hibernate generate better SQL for the chosen database
+    
+book-info-url: http://book-info-service:8082/books
+book-rating-url: http://book-rating-service:8083/rating
+book-review-url: http://book-review-service:8084/review
+
+server:
+  port: 8085
+  
+logging: 
+  level:
+    com:
+      bookworm:
+        bookwormapigateway:
+          clients:
+            BookInfoClient: DEBUG
+            BookRatingClient: DEBUG
+            BookReviewClient: DEBUG
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 160000000
+        readTimeout: 160000000  
+  
+management:
+  endpoint:
+    restart:
+      enabled: true
+    health:
+      enabled: true
+    info:
+      enabled: true
+      
+ribbon:
+  http:
+    client:
+      enabled: true
+      
+      
+## App Properties
+jwtSecret: JWTSuperSecretKey
+jwtExpirationInMs: 604800000

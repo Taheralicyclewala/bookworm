@@ -10,7 +10,7 @@ import com.bookworm.bookwormapigateway.dto.UserReview;
 import com.bookworm.bookwormapigateway.dto.UserReviews;
 
 
-@FeignClient("${book-review-url}/review")
+@FeignClient(url = "${book-review-url}", name = "book-review-service")
 public interface BookReviewClient {
 	
 	@GetMapping("/user/{userId}")

@@ -13,7 +13,7 @@ import com.bookworm.bookwormapigateway.dto.Book;
 import com.bookworm.bookwormapigateway.dto.Books;
 
 
-@FeignClient("${book-info-url}/books")
+@FeignClient(url = "${book-info-url}", name = "book-info-service")
 public interface BookInfoClient {
 	
 	@GetMapping("/all")

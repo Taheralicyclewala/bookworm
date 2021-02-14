@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.bookworm.bookinfo.dto.BookRating;
 
 
-@FeignClient("${book-rating-url}/book-rating")
+@FeignClient(url = "${book-rating-url}",name = "book-rating-service")
 public interface BookRatingClient{
 	
 	@GetMapping("/{bookId}")

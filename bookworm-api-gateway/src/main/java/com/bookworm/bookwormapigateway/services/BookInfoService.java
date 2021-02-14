@@ -47,5 +47,56 @@ public class BookInfoService {
 	{
 		return new Book();
 	}
-
+	
+	
+	@HystrixCommand(fallbackMethod = "getBooksByCategoryFallback",
+			commandProperties = {
+					@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "2000"),
+					@HystrixProperty(name = "circuitBreaker.requestVolumeThreshold",value = "10"),
+					@HystrixProperty(name = "circuitBreaker.errorThresholdPercentage",value = "5"),
+					@HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds",value = "3000")
+			})
+	public Books getBooksByCategory(String categoryName) {
+		return bookInfoClient.getBooksByCategory(categoryName);
+	}
+	
+	public Books getBooksByCategoryFallback(String categoryName)
+	{
+		return new Books();
+	}
+	
+	@HystrixCommand(fallbackMethod = "getBooksByAuthorFallback",
+			commandProperties = {
+					@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "2000"),
+					@HystrixProperty(name = "circuitBreaker.requestVolumeThreshold",value = "10"),
+					@HystrixProperty(name = "circuitBreaker.errorThresholdPercentage",value = "5"),
+					@HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds",value = "3000")
+			})
+	public Books getBooksByAuthor(String author)
+	{
+		return bookInfoClient.getBooksByAuthor(author);		
+	}
+	
+	
+	public Books getBooksByAuthorFallback(String author)
+	{
+		return new Books();
+	}
+	
+	@HystrixCommand(fallbackMethod = "getBookByTitleFallback",
+			commandProperties = {
+					@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "2000"),
+					@HystrixProperty(name = "circuitBreaker.requestVolumeThreshold",value = "10"),
+					@HystrixProperty(name = "circuitBreaker.errorThresholdPercentage",value = "5"),
+					@HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds",value = "3000")
+			})
+	public Book getBookByTitle(String title)
+	{
+		return bookInfoClient.getBookByTitle(title);
+	}
+	
+	public Book getBookByTitleFallback(String title)
+	{
+		return new Book();
+	}
 }

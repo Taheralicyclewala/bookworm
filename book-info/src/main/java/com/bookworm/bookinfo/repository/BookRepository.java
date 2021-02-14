@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.bookworm.bookinfo.model.Book;
 
 @Repository
-public interface BookRepository extends JpaRepository<Book,String> {
+public interface BookRepository extends JpaRepository<Book,Integer> {
  
 	@Query(value = "Select * from book where book.author_id =:authorId",nativeQuery = true)
 	public Optional<List<Book>> findBookByAuthor(@Param("authorId") int authorId);
@@ -24,5 +24,4 @@ public interface BookRepository extends JpaRepository<Book,String> {
 	
 	@Query(value = "select * from book b where b.title =:title",nativeQuery = true)
 	public Optional<Book> findBookByTitle(String title);
-
 }

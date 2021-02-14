@@ -28,5 +28,10 @@
     "name": "server.datasource",
     "type": "java.lang.String",
     "description": "A description for 'server.datasource'"
+  },
+  {
+    "name": "app",
+    "type": "java.lang.String",
+    "description": "A description for 'app'"
   }
 ]}

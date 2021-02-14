@@ -32,7 +32,6 @@ public class GatewayService {
 	
 	@Autowired private UserRepository userRepository;
 	
-	
 	public Books getAllBooks()
 	{
 		return bookInfoService.getBooks();
@@ -46,22 +45,26 @@ public class GatewayService {
 	
 	public Books getBookReads(String userId) {
 		if(userId == null || userId.trim().equals("")) throw new InvalidIdException("User Id",userId);
+		userId = userId.trim();
 		UserRatings userRatings = bookRatingService.getUserRatings(userId);
 		UserReviews userReviews = bookReviewService.getUserReviews(userId);
 		return new Books(buildBookAssessments(userRatings,userReviews,true).entrySet().stream().map(mapper -> {
 			Book book = bookInfoService.getBook(mapper.getKey());
-			book.setBookAssessment(mapper.getValue());
+			BookAssessments bookAssessements = new BookAssessments();
+			bookAssessements.setBookId(book.getId());
+			bookAssessements.addAssessment(mapper.getValue());
+			book.setBookAssessments(bookAssessements);
 			return book;
 		}).collect(Collectors.toList()));
 	}
-
 	
 	public BookAssessments getBookAssessments(String bookId)
 	{
 		if(bookId == null || bookId.trim().equals("")) throw new InvalidIdException("Book Id",bookId);
 		//Both these call can be implemented in asynchronous way
+		bookId = bookId.trim();
 		UserRatings userRatings = bookRatingService.getBookRatings(bookId);
-		UserReviews userReviews = bookReviewService.getBookReviews(bookId);
+		UserReviews userReviews = bookReviewService.getBookReviews(bookId);	
 		List<BookAssessment> bookAssessments = buildBookAssessments(userRatings,userReviews,false).entrySet().stream().map(mapper -> mapper.getValue()).collect(Collectors.toList()); 
 		return new BookAssessments(bookId,bookAssessments);
 	}
@@ -84,8 +87,7 @@ public class GatewayService {
 				assessmentMap.put(userRating.getBookId(),assessment);
 			}
 		});
-		userReviews.getUserReviews().parallelStream().forEach(userReview -> {
-			
+		userReviews.getUserReviews().parallelStream().forEach(userReview -> {			
 			if(!byBook)
 			{
 				String userId = userReview.getUserId();
@@ -100,9 +102,8 @@ public class GatewayService {
 				BookAssessment assessment = (assessmentMap.containsKey(bookId))?assessmentMap.get(bookId):new BookAssessment();
 				assessment.setReview(userReview.getReview());
 				assessmentMap.put(userReview.getBookId(),assessment);
-			}
-			
-		});	
+			}			
+		});
 		return 	assessmentMap;	
 	}
 
@@ -112,5 +113,22 @@ public class GatewayService {
 		return bookReviewService.addReview(userReview);
 	}
 
+	public Books getAllBooksByCategory(String categoryName) {
+		if(categoryName == null || categoryName.trim().equals(""))
+			throw new InvalidIdException("Category Type",categoryName);
+		return bookInfoService.getBooksByCategory(categoryName);
+	}
 
+	public Books getAllBooksByAuthor(String authorName) {		
+		if(authorName == null || authorName.trim().equals(""))
+			throw new InvalidIdException("Author Name",authorName);
+		return bookInfoService.getBooksByAuthor(authorName);
+
+	}
+
+	public Book getBookByTitle(String title) {
+		if(title == null || title.trim().equals(""))
+			throw new InvalidIdException(" Book title", title);
+		return bookInfoService.getBookByTitle(title);	
+	}
 }

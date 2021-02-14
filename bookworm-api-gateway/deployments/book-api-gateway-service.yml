@@ -1,0 +1,15 @@
+apiVersion: v1                # API version
+kind: Service                 # Type of the kubernetes resource
+metadata:
+  name: bookworm-api-gateway-service        # Name of the kubernetes resource
+  labels:                     # Labels that will be applied to this resource
+    app: book-api-gateway-service
+spec:
+  type: NodePort              # The service will be exposed by opening a Port on each node and proxying it.
+  selector:
+    app: book-api-gateway-service
+  ports:                      # Forward incoming connections on port 8080 to the target port 8080
+  - name: http
+    port: 8085                # Port of Service
+    targetPort: 8085          # Port of POD
+    nodePort: 30010

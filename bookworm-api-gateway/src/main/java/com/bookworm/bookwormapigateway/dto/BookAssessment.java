@@ -10,8 +10,6 @@ public class BookAssessment {
 	private byte rating;
 	
 	private String review;
-
-	
 	
 	public BookAssessment(User user) {
 		this.user = user;

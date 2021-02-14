@@ -27,4 +27,11 @@ public class Books implements Serializable {
 	public void setBooksList(List<Book> booksList) {
 		this.booksList = booksList;
 	}
+
+	@Override
+	public String toString() {
+		return "Books [booksList=" + booksList + "]";
+	}
+	
+	
 }

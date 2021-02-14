@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,6 +23,10 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 public class Book {
 		
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private int id;	
+	
 	@Column(name = "isbn10",length = 15)
 	private String isbn;
 	
@@ -51,6 +57,8 @@ public class Book {
 	@Column(name = "publication_date")
 	@Temporal(TemporalType.DATE)
 	private Date publicationDate;
+	
+	
 
 	public Book() {
 	}
@@ -69,8 +77,15 @@ public class Book {
 		this.printLength = printLength;
 		this.publicationDate = publicationDate;
 	}
+	
+	public int getId() {
+		return id;
+	}
 
-
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public String getIsbn() {
 		return isbn;
 	}

@@ -15,7 +15,8 @@ id int primary key auto_increment,
 name char(35) not null unique)Engine=InnoDB; 
 
 create table IF NOT EXISTS book(
-isbn10 varchar(15) primary key,
+id int auto_increment primary key,
+isbn10 varchar(15) not null unique,
 title varchar(200) unique not null,
 author_id int not null references author(id),
 language_id int not null references language(id),
@@ -26,6 +27,6 @@ print_length int,
 publication_date date)Engine=InnoDB;
 
 create table IF NOT EXISTS book_category_mapping(
-book_id varchar(15) references book(isbn10),
+book_id int references book(id),
 category_id int references category(id),
 primary key (book_id,category_id))Engine=InnoDB;

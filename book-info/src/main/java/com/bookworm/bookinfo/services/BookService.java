@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,6 +37,12 @@ public class BookService {
 	
 	@Autowired
 	private HashMap<String,Author> authors;
+	
+	
+	public Book addBook(@Valid Book book)
+	{
+		return book;
+	}
 
 	public Books getBooks()
 	{
@@ -44,8 +52,7 @@ public class BookService {
 	public Book getBookById(String bookId) throws InvalidIdException, EntityNotFoundException
 	{
 		if(bookId == null | bookId.trim().equals("")) throw new InvalidIdException("Book Id", bookId);		
-		Optional<com.bookworm.bookinfo.model.Book> modelBook = bookRepository.findById(bookId);
-		
+		Optional<com.bookworm.bookinfo.model.Book> modelBook = bookRepository.findById(Integer.parseInt(bookId));		
 		if(modelBook.isPresent())
 		{
 			return getBookDetails(new Book(modelBook.get()));
@@ -59,7 +66,7 @@ public class BookService {
 	
 	public Book getBookDetails(Book book)
 	{		
-		Optional<List<BookCategoryMapping>> categories = bookCategoryMappingRepository.findCategoriesByBook(book.getId());
+		Optional<List<BookCategoryMapping>> categories = bookCategoryMappingRepository.findCategoriesByBook(Integer.parseInt(book.getId()));
 
 		if(categories.isPresent()) book.setCategories(categories.get().stream().map(mapping -> mapping.getBookCategoryIdentity().getCategory().getType()).collect(Collectors.toList()));
 		

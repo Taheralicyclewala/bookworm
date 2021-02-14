@@ -58,5 +58,7 @@ ribbon:
   http:
     client:
       enabled: true
-        
- 
+       
+
+# AWS Properties
+  

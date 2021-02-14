@@ -20,8 +20,6 @@ import com.bookworm.bookwormapigateway.dto.UserReviews;
 import com.bookworm.bookwormapigateway.exception.InvalidIdException;
 import com.bookworm.bookwormapigateway.model.User;
 import com.bookworm.bookwormapigateway.repository.UserRepository;
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
 
 @Service
 public class GatewayService {
@@ -34,8 +32,6 @@ public class GatewayService {
 	
 	@Autowired private UserRepository userRepository;
 	
-	private final static Logger logger = LoggerFactory.getLogger(GatewayService.class);
-
 	public Books getAllBooks()
 	{
 		return bookInfoService.getBooks();

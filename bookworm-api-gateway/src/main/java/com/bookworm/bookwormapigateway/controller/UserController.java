@@ -13,8 +13,6 @@ import com.bookworm.bookwormapigateway.dto.ServiceResponse;
 import com.bookworm.bookwormapigateway.dto.UserRating;
 import com.bookworm.bookwormapigateway.dto.UserReview;
 import com.bookworm.bookwormapigateway.services.GatewayService;
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
 
 
 @RestController
@@ -23,7 +21,6 @@ import com.sun.org.slf4j.internal.LoggerFactory;
 public class UserController {
 
 
-//	private final static Logger log = LoggerFactory.getLogger(UserController.class);
 	
     @Autowired
     private GatewayService gatewayService;
